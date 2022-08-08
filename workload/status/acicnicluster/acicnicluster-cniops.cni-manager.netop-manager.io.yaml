@@ -6,5 +6,5 @@ kind: ConfigMap
 metadata:
   labels:
     netop-manager-resource: cniops.cni-manager.netop-manager.io
-  name: aci-cni-cniops.cni-manager.netop-manager.io
+  name: acicnicluster-cniops.cni-manager.netop-manager.io
   namespace: 
