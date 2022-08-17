@@ -12,11 +12,11 @@ spec:
   aep: bm-srvrs-aep
   l3out:
     external_networks:
-    - sauto_l3out-3_epg
-    name: sauto_l3out-3
+    - sauto_l3out-1_epg
+    name: sauto_l3out-1
     svi:
-      int_prof_name: sauto_l3out-3_int_prof
-      node_profile_name: sauto_l3out-3_node_prof
+      int_prof_name: sauto_l3out-1_int_prof
+      node_profile_name: sauto_l3out-1_node_prof
   physical_domain:
     domain: bm-srvrs-calico-pd
   selector:
@@ -25,5 +25,5 @@ spec:
       site: bldg-15-lab
   server_count: 3
   vrf:
-    name: sauto_l3out-3_vrf
+    name: sauto_l3out-1_vrf
     tenant: common
