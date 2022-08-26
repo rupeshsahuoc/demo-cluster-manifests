@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   installers.netop-manager-cntrlr.netop-manager.io.yaml: |
-    "name:sample-installer, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":2,\"ns\":11,\"pods\":10,\"svc\":8},\"observedGeneration\":3,\"operatorStatus\":\"Running\",\"state\":\"MonitoringNF\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjoxMSwicG9kcyI6MTAsInN2YyI6OH0sIm9ic2VydmVkR2VuZXJhdGlvbiI6Mywib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIiwic3RhdGUiOiJNb25pdG9yaW5nTkYifQ=="
+    "name:sample-installer, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":2,\"ns\":11,\"pods\":11,\"svc\":8},\"observedGeneration\":3,\"operatorStatus\":\"Running\",\"state\":\"MonitoringNF\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjoxMSwicG9kcyI6MTEsInN2YyI6OH0sIm9ic2VydmVkR2VuZXJhdGlvbiI6Mywib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIiwic3RhdGUiOiJNb25pdG9yaW5nTkYifQ=="
 kind: ConfigMap
 metadata:
   labels:
