@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  machinegroupprofiles.netop.mgr.yaml: ""
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-aci-cni, ns:netop-manager, status:{}, status_b64:e30="
 kind: ConfigMap
 metadata:
   labels:
