@@ -46,9 +46,28 @@ data:
         no_proxy: 10.96.0.1
 kind: ConfigMap
 metadata:
+  creationTimestamp: "2022-08-27T03:13:21Z"
   labels:
     distro: kubernetes
     location: on-prem
     pod_network: aci
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:clusterprofile_overrides: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:distro: {}
+          f:location: {}
+          f:pod_network: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-08-27T03:13:21Z"
   name: bm2acicni
   namespace: netop-manager
+  resourceVersion: "9183781"
+  uid: 3cf53d01-fc66-418c-a2ab-5aa280759ac0

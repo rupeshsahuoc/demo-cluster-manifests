@@ -4,10 +4,12 @@ metadata:
   name: bm2acicni
   namespace: netop-manager
 spec:
-  cni: cko-unmanaged
+  cni: kubernetes-1.22
+  monitoring: prometheus
   selector:
     matchLabels:
       cluster: aci-cni
       distro: kubernetes
       location: on-prem
       pod-network: aci
+  service_mesh: bm2acicni
