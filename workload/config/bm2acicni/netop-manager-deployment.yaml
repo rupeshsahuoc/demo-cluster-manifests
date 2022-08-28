@@ -913,7 +913,7 @@ spec:
               key: serverPort
               name: websocket-config
               optional: true
-        image: quay.io/noirolabs/cni-manager:demo-test
+        image: quay.io/noirolabs/cni-manager:cko-mvp-1
         imagePullPolicy: Always
         name: manager
         resources:
