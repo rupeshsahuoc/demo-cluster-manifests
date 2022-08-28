@@ -23,7 +23,13 @@ data:
       registry:
         image_prefix: quay.io/noirolabs
         image_pull_secret: noiro-docker-registry-secret
-        network_operator_version: demo-test
+        aci_containers_controller_version: kmr2-test
+        aci_containers_host_version: kmr2-test
+        aci_containers_operator_version: kmr2-test
+        cnideploy_version: kmr2-test
+        opflex_agent_version: kmr2-test
+        openvswitch_version: kmr2-test
+        network_operator_version: cko-mvp-1
       net_config:
         node_subnet: 1.100.101.1/24
         pod_subnet: 10.6.0.1/16
