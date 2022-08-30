@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   installers.netop-manager-cntrlr.netop-manager.io.yaml: |
-    "name:installer-sample, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":\"2\",\"ns\":\"9\",\"pods\":\"22\",\"svc\":\"10\"},\"deployedIntent\":{\"cko-cni\":{\"op\":\"applied\",\"type\":\"unmanaged\"},\"cko-monitoring\":{\"op\":\"applied\",\"type\":\"cko-m-prometheus\"}},\"observedGeneration\":1,\"state\":\"SentryMode\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOiIyIiwibnMiOiI5IiwicG9kcyI6IjIyIiwic3ZjIjoiMTAifSwiZGVwbG95ZWRJbnRlbnQiOnsiY2tvLWNuaSI6eyJvcCI6ImFwcGxpZWQiLCJ0eXBlIjoidW5tYW5hZ2VkIn0sImNrby1tb25pdG9yaW5nIjp7Im9wIjoiYXBwbGllZCIsInR5cGUiOiJja28tbS1wcm9tZXRoZXVzIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjEsInN0YXRlIjoiU2VudHJ5TW9kZSJ9"
+    "name:installer-sample, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":\"2\",\"ns\":\"9\",\"pods\":\"18\",\"svc\":\"7\"},\"deployedIntent\":{\"cko-cni\":{\"op\":\"applied\",\"type\":\"unmanaged\"},\"cko-monitoring\":{\"op\":\"applied\",\"type\":\"cko-m-prometheus\"}},\"observedGeneration\":1,\"state\":\"SentryMode\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOiIyIiwibnMiOiI5IiwicG9kcyI6IjE4Iiwic3ZjIjoiNyJ9LCJkZXBsb3llZEludGVudCI6eyJja28tY25pIjp7Im9wIjoiYXBwbGllZCIsInR5cGUiOiJ1bm1hbmFnZWQifSwiY2tvLW1vbml0b3JpbmciOnsib3AiOiJhcHBsaWVkIiwidHlwZSI6ImNrby1tLXByb21ldGhldXMifX0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJTZW50cnlNb2RlIn0="
 kind: ConfigMap
 metadata:
   labels:
