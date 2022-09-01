@@ -9,11 +9,11 @@ data:
             mcast_range:
                 start: 225.114.1.1
                 end: 225.114.255.255
-          nested_inside:
-            type: vmware
-            name: hypflex-vswitch
-            installer_provisioned_lb_ip: 192.168.57.2
-            vlan_pool: ocp49-pool
+            nested_inside:
+              type: vmware
+              name: hypflex-vswitch
+              installer_provisioned_lb_ip: 192.168.57.2
+              vlan_pool: ocp49-pool
         logging:
           controller_log_level: debug
           hostagent_log_level: debug
@@ -34,7 +34,7 @@ data:
         pod_subnet: 10.2.0.1/16
         extern_dynamic: 10.3.0.1/24
         kubeapi_vlan: 291
-      flavor: openshift-4.10-openstack
+      flavor: openshift-4.9-esx
       cko_proxy_config:
         http_proxy: http://proxy.esl.cisco.com:80
         https_proxy: http://proxy.esl.cisco.com:80
