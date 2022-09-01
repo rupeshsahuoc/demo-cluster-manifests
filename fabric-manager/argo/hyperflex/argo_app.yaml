@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: fabric-manager/config/k8s-bm-2/
+    path: fabric-manager/config/hyperflex/
     repoURL: https://github.com/networkoperator/demo-cluster-manifests
     targetRevision: sumit-test-1 
   syncPolicy:
