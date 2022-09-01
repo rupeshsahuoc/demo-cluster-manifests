@@ -4,7 +4,7 @@ metadata:
   name: oshift1
   namespace: netop-manager
 spec:
-  cni: openshift-4.10-openstack
+  cni: openshift-4.9-esx
   selector:
     matchLabels:
       computes: NOVA
