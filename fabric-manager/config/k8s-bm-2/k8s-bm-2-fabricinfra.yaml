@@ -9,11 +9,13 @@ metadata:
 spec:
   aci:
     external_subnets:
+    - 10.3.0.1/16
     - 10.4.0.1/16
     - 20.3.0.1/16
     - 20.4.0.1/16
     infra_vlan: 4093
     internal_subnets:
+    - 1.100.101.1/16
     - 2.100.101.1/16
     - 10.5.0.1/16
     - 10.6.0.1/16
@@ -31,6 +33,6 @@ spec:
     hosts:
     - 10.30.120.140
     login:
-      password: dummy
-      username: dummy
+      password: noir0123
+      username: admin
   fabric_type: aci
