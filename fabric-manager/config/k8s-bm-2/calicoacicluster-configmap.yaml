@@ -43,41 +43,9 @@ data:
          - name: k8sbm2-bm-5
 kind: ConfigMap
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","data":{"clusterprofile_overrides":"cluster_input:\n  aci_cni_config:\n  registry:\n    image_prefix: quay.io/noirolabs\n    image_pull_secret: noiro-docker-registry-secret\n    network_operator_version: cko-mvp-1\n  aci_config:\n    cluster_l3out:\n      aep: bm-srvrs-calico-aep\n      svi:\n        type: floating\n        floating_ip: 2.100.101.100/24\n        secondary_ip: 2.100.101.254/24\n        vlan_id: 13\n        mtu: 9000\n      bgp:\n        peering:\n        remote_as_number: 64512\n        aci_as_number: 2\n  net_config:\n    node_subnet: 2.100.101.1/24\n    pod_subnet: 20.2.0.1/16\n    extern_dynamic: 20.3.0.1/16\n    cluster_svc_subnet: 10.96.0.0/12\n  cko_proxy_config:\n    http_proxy: http://proxy.esl.cisco.com:80\n    https_proxy: http://proxy.esl.cisco.com:80\n    no_proxy: 10.96.0.1\n  topology:\n   rack:\n   - id: 1\n     aci_pod_id: 1\n     leaf:\n     - id: 101\n       local_ip: 2.100.101.201\n     - id: 102\n       local_ip: 2.100.101.202\n     node:\n     - name: k8sbm2-bm-4\n     - name: k8sbm2-bm-5\n"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"distro":"kubernetes","location":"on-prem","pod_network":"calico"},"name":"calicoacicluster","namespace":"netop-manager"}}
-  creationTimestamp: "2022-09-02T19:34:26Z"
   labels:
     distro: kubernetes
     location: on-prem
     pod_network: calico
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data: {}
-      f:metadata:
-        f:labels:
-          .: {}
-          f:distro: {}
-          f:location: {}
-          f:pod_network: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-09-02T19:34:26Z"
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data:
-        f:clusterprofile_overrides: {}
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:kubectl.kubernetes.io/last-applied-configuration: {}
-    manager: kubectl-client-side-apply
-    operation: Update
-    time: "2022-09-02T19:47:22Z"
   name: calicoacicluster
   namespace: netop-manager
-  resourceVersion: "9471850"
-  uid: 0253b428-a9c6-40d5-9e21-b256177d6ac5
