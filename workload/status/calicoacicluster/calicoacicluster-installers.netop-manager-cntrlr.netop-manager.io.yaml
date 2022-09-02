@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   installers.netop-manager-cntrlr.netop-manager.io.yaml: |
-    "name:installer-calico-cni, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":2,\"ns\":9,\"pods\":17,\"svc\":6},\"observedGeneration\":2,\"operatorStatus\":\"Running\",\"state\":\"MonitoringNF\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo5LCJwb2RzIjoxNywic3ZjIjo2fSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoyLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmciLCJzdGF0ZSI6Ik1vbml0b3JpbmdORiJ9"
+    "name:installer-calico-cni, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":2,\"ns\":10,\"pods\":21,\"svc\":7},\"observedGeneration\":2,\"operatorStatus\":\"Running\",\"state\":\"MonitoringNF\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjoxMCwicG9kcyI6MjEsInN2YyI6N30sIm9ic2VydmVkR2VuZXJhdGlvbiI6Miwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIiwic3RhdGUiOiJNb25pdG9yaW5nTkYifQ=="
 kind: ConfigMap
 metadata:
   labels:
