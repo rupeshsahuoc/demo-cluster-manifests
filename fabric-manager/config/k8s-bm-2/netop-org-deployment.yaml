@@ -250,7 +250,7 @@ spec:
         - name: SERVER_PORT
           value: "8095"
         - name: FABRIC_IMAGE_TAG
-          value: server-test
+          value: master-test
         image: quay.io/noirolabs/netop-org-manager:server-test
         imagePullPolicy: Always
         livenessProbe:
@@ -737,7 +737,7 @@ spec:
                         properties:
                           aep:
                             type: string
-                          peering:
+                          bgp:
                             properties:
                               peering:
                                 properties:
@@ -1169,7 +1169,7 @@ spec:
                         properties:
                           aep:
                             type: string
-                          peering:
+                          bgp:
                             properties:
                               peering:
                                 properties:
@@ -1489,7 +1489,7 @@ spec:
                 properties:
                   aep:
                     type: string
-                  peering:
+                  bgp:
                     properties:
                       peering:
                         properties:
@@ -1593,7 +1593,7 @@ spec:
                 properties:
                   aep:
                     type: string
-                  peering:
+                  bgp:
                     properties:
                       peering:
                         properties:
