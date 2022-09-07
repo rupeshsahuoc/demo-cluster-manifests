@@ -8,6 +8,25 @@ metadata:
   namespace: netop-manager
 spec:
   aci:
+    contexts:
+      context-1:
+        aep: bm-srvrs-aep
+        l3out:
+          external_networks:
+          - sauto_l3out-1_epg
+          name: sauto_l3out-1
+        vrf:
+          name: sauto_l3out-1_vrf
+          tenant: common
+      context-2:
+        aep: bm-srvrs-calico-aep
+        l3out:
+          external_networks:
+          - sauto_l3out-13_epg
+          name: sauto_l3out-3
+        vrf:
+          name: sauto_l3out-3_vrf
+          tenant: common
     external_subnets:
     - 10.3.0.1/16
     - 10.4.0.1/16
