@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
@@ -55,3 +56,5 @@ spec:
       password: noir0123
       username: admin
   fabric_type: aci
+=======
+>>>>>>> 1f5bff7235d6198353c185cee643624573b882e6

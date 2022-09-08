@@ -3,6 +3,7 @@ kind: Namespace
 metadata:
   labels:
     control-plane: netop-org-manager
+<<<<<<< HEAD
   name: netop-manager
 ---
 apiVersion: v1
@@ -1668,3 +1669,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
+=======
+  name: netop-manager
+>>>>>>> 1f5bff7235d6198353c185cee643624573b882e6
