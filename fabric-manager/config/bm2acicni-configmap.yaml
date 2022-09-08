@@ -4,6 +4,7 @@ data:
     cluster_input:
       aci_cni_config:
         aci_config:
+          aep: bm-srvrs-aep
           vmm_domain:
             encap_type: vxlan
             mcast_range:
@@ -28,6 +29,14 @@ data:
           cnideploy_version: kmr2-test
           opflex_agent_version: kmr2-test
           openvswitch_version: kmr2-test
+      aci_config:
+        l3out:
+          name: sauto_l3out-1
+          external_networks:
+          - sauto_l3out-1_epg
+        vrf:
+          name: sauto_l3out-1_vrf
+          tenant: common
       registry:
         image_prefix: quay.io/noirolabs
         image_pull_secret: noiro-docker-registry-secret
