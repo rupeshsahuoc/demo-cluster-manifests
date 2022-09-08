@@ -8,6 +8,16 @@ metadata:
   namespace: netop-manager
 spec:
   aci:
+    contexts:
+      context-1:
+        aep: hypf-aep
+        l3out:
+          external_networks:
+          - vishal_filip_acc_net
+          name: vishal_filip_acc_l3out
+        vrf:
+          name: vishal_filip_acc_test
+          tenant: common
     external_subnets:
     - 10.3.0.1/24
     - 10.4.0.1/24
