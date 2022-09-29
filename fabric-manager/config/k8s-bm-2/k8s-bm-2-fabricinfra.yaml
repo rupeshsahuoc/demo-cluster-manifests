@@ -7,6 +7,11 @@ metadata:
   name: k8s-bm-2
   namespace: netop-manager
 spec:
+  bgp:
+    aci_as_number: 2
+    remote_as_numbers:
+    - 64515
+    - 64512
   contexts:
     context-1:
       aep: bm-srvrs-aep
@@ -49,24 +54,6 @@ spec:
   mcast_subnets:
   - 225.114.0.0/16
   - 225.115.0.0/16
-  topology:
-    rack:
-    - aci_pod_id: 1
-      id: 1
-      leaf:
-      - id: 101
-      - id: 102
-      node:
-      - name: k8s-node1
-      - name: k8s-node2
-    - aci_pod_id: 1
-      id: 2
-      leaf:
-      - id: 103
-      - id: 104
-      node:
-      - name: k8s-node3
-      - name: k8s-node4
   vlans:
   - 101
   - 102
