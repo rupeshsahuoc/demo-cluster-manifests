@@ -250,7 +250,7 @@ spec:
         - name: SERVER_PORT
           value: "8095"
         - name: FABRIC_IMAGE_TAG
-          value: master-test
+          value: server-test
         image: quay.io/noirolabs/netop-org-manager:master-test
         imagePullPolicy: Always
         livenessProbe:
