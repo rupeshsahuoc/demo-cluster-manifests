@@ -303,20 +303,12 @@ metadata:
   name: defaults-cluster-profile
   namespace: netop-manager
 data:
-  clusterprofile_overrides: |-
-    cluster_input:
-      cni: aci
-      distro:
-        type: kubernetes
-        platform: baremetal
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: defaults-global-fabricinfra
-  namespace: netop-manager
-data:
-  provision_apic: "true"
+ clusterprofile_overrides: |-
+  cluster_input:
+    cni: aci
+    distro:
+      type: kubernetes
+      platform: baremetal
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
