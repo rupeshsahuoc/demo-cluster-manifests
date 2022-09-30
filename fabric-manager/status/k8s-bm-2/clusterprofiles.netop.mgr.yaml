@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  clusterprofiles.netop.mgr.yaml: ""
+  clusterprofiles.netop.mgr.yaml: |
+    "name:bm2acicni, ns:netop-manager, status:{\"fabricinfra\":{},\"machine_group_profile_name\":\"for-aci-cni\"}, status_b64:eyJmYWJyaWNpbmZyYSI6e30sIm1hY2hpbmVfZ3JvdXBfcHJvZmlsZV9uYW1lIjoiZm9yLWFjaS1jbmkifQ=="
 kind: ConfigMap
 metadata:
   labels:
