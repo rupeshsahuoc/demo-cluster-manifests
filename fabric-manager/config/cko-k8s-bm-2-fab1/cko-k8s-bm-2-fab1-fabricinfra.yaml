@@ -2,7 +2,7 @@ apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
   labels:
-    cisco_app: cisco_29_09_2022_03_17_53_236194_JOLMOT
+    cisco_app: cisco_30_09_2022_03_11_41_744976_2PVMUY
     fabric: on-prem-dev-infra
     purpose: testing
     site: bldg-15-lab
