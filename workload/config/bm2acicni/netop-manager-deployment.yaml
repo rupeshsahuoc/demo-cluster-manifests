@@ -1162,5 +1162,5 @@ metadata:
   namespace: netop-manager-system
 data:
   serverIP: "172.18.0.2"
-  serverPort: "8090"
+  serverPort: "8095"
 
