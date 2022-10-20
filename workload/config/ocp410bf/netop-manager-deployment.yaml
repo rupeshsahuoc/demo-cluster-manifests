@@ -3,9 +3,6 @@ kind: Namespace
 metadata:
   labels:
     control-plane: controller-manager
-    openshift.io/run-level: "0"
-  annotations:
-    openshift.io/node-selector: ''
   name: netop-manager-system
 ---
 apiVersion: apiextensions.k8s.io/v1
@@ -1066,18 +1063,6 @@ rules:
   - patch
   - update
   - watch
-- apiGroups:
-  - scheduling.k8s.io
-  resources:
-  - priorityclasses
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -1256,7 +1241,7 @@ spec:
         - name: HTTPS_PROXY
           value: http://proxy.esl.cisco.com:80
         - name: NO_PROXY
-          value: localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1
+          value: 10.96.0.1
         - name: SERVER_IP
           valueFrom:
             configMapKeyRef:
@@ -1340,7 +1325,6 @@ spec:
         - mountPath: /mnt/cni-config
           name: cni-config-volume
       hostNetwork: true
-      priorityClassName: netop-priority
       securityContext:
         runAsNonRoot: false
       serviceAccountName: netop-manager-controller-manager
@@ -1399,12 +1383,4 @@ metadata:
 data:
   serverIP: "172.18.0.2"
   serverPort: "8095"
----
-apiVersion: scheduling.k8s.io/v1
-kind: PriorityClass
-metadata:
-  name: netop-priority
-value: 1000000000
-globalDefault: false
-description: "This priority class is used for netop-manager resources"
 
