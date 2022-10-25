@@ -1347,7 +1347,7 @@ spec:
               key: email
               name: cko-config
               optional: true
-        image: noiro/netop-manager:0.9.0.d04f56f
+        image: quay.io/noirolabs/netop-manager:cko-mvp-1
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
