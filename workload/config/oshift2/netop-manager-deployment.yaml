@@ -61,14 +61,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: true
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -88,8 +89,6 @@ spec:
                 type: string
               cniVersion:
                 type: string
-              internalState:
-                type: string
               ipam:
                 type: string
               managedState:
@@ -97,7 +96,7 @@ spec:
               observedGeneration:
                 format: int64
                 type: integer
-              operatorStatus:
+              state:
                 type: string
               upgradeStatus:
                 properties:
@@ -135,7 +134,12 @@ spec:
     singular: diagnosticops
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - description: State/Phase of CR
+      jsonPath: .status.state
+      name: Phase
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         description: DiagnosticOps is the Schema for the diagnosticops API.
@@ -156,14 +160,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: true
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -179,14 +184,14 @@ spec:
                 additionalProperties:
                   type: string
                 type: object
-              gType:
-                enum:
-                - cko-connectivityChecker
-                type: string
               observedGeneration:
                 format: int64
                 type: integer
               state:
+                type: string
+              type:
+                enum:
+                - connectivityChecker
                 type: string
             type: object
         type: object
@@ -211,7 +216,12 @@ spec:
     singular: gitops
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - description: State/Phase of CR
+      jsonPath: .status.state
+      name: Phase
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         description: GitOps is the Schema for the gitops API.
@@ -232,14 +242,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: true
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -311,7 +322,7 @@ spec:
           spec:
             description: InstallerSpec defines the desired state of Installer.
             properties:
-              networkFunctions:
+              operatorConfigs:
                 properties:
                   networking:
                     additionalProperties:
@@ -323,8 +334,8 @@ spec:
                             type: array
                           type: object
                         managedComponent:
-                          default: false
-                          description: ManagedComponent field is ignored for platform components and must be set to true to manage networking component.
+                          default: true
+                          description: ManagedComponent field is ignored for platform components and must be set to false to adopt networking components without managing them.
                           type: boolean
                         options:
                           additionalProperties:
@@ -347,8 +358,8 @@ spec:
                             type: array
                           type: object
                         managedComponent:
-                          default: false
-                          description: ManagedComponent field is ignored for platform components and must be set to true to manage networking component.
+                          default: true
+                          description: ManagedComponent field is ignored for platform components and must be set to false to adopt networking components without managing them.
                           type: boolean
                         options:
                           additionalProperties:
@@ -411,7 +422,12 @@ spec:
     singular: observedops
   scope: Cluster
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - description: Type of CNI
+      jsonPath: .status.cniType
+      name: CNI-TYPE
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         description: ObservedOps is the Schema for the observedops API.
@@ -624,6 +640,33 @@ rules:
   - nettools.debug
   resources:
   - connectivitycheckers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - nettools.debug
+  resources:
+  - errorpodsreportings
+  verbs:
+  - create
+  - delete
+  - deletecollection
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - nettools.debug
+  resources:
+  - errorpodsreportings/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - nettools.debug
+  resources:
+  - errorpodsreportings/status
   verbs:
   - get
   - patch
@@ -985,18 +1028,6 @@ rules:
   - patch
   - update
 - apiGroups:
-  - policy
-  resources:
-  - podsecuritypolicies
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
   - projectcalico.org
   resources:
   - bgpconfigurations
@@ -1249,14 +1280,6 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
-        - name: SYSTEM_ID
-          value: oshift2
-        - name: HTTP_PROXY
-          value: http://proxy.esl.cisco.com:80
-        - name: HTTPS_PROXY
-          value: http://proxy.esl.cisco.com:80
-        - name: NO_PROXY
-          value: localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1
         - name: SERVER_IP
           valueFrom:
             configMapKeyRef:
@@ -1269,41 +1292,64 @@ spec:
               key: serverPort
               name: websocket-config
               optional: true
+        - name: SYSTEM_ID
+          valueFrom:
+            secretKeyRef:
+              key: systemid
+              name: cko-config
+        - name: HTTP_PROXY
+          valueFrom:
+            secretKeyRef:
+              key: http_proxy
+              name: cko-config
+              optional: true
+        - name: HTTPS_PROXY
+          valueFrom:
+            secretKeyRef:
+              key: https_proxy
+              name: cko-config
+              optional: true
+        - name: NO_PROXY
+          valueFrom:
+            secretKeyRef:
+              key: no_proxy
+              name: cko-config
+              optional: true
         - name: GIT_REPO
           valueFrom:
             secretKeyRef:
               key: repo
-              name: git-config
+              name: cko-config
               optional: true
         - name: GIT_DIR
           valueFrom:
             secretKeyRef:
               key: dir
-              name: git-config
+              name: cko-config
               optional: true
         - name: GIT_BRANCH
           valueFrom:
             secretKeyRef:
               key: branch
-              name: git-config
+              name: cko-config
               optional: true
         - name: GIT_TOKEN
           valueFrom:
             secretKeyRef:
               key: token
-              name: git-config
+              name: cko-config
               optional: true
         - name: GIT_USER
           valueFrom:
             secretKeyRef:
               key: user
-              name: git-config
+              name: cko-config
               optional: true
         - name: GIT_EMAIL
           valueFrom:
             secretKeyRef:
               key: email
-              name: git-config
+              name: cko-config
               optional: true
         image: quay.io/noirolabs/netop-manager:cko-mvp-1
         imagePullPolicy: Always
@@ -1372,7 +1418,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cni-config
+  name: netop-manager-cni-config
   namespace: netop-manager-system
 data:
   cniconfig.yaml: |-
@@ -1407,4 +1453,5 @@ metadata:
 value: 1000000000
 globalDefault: false
 description: "This priority class is used for netop-manager resources"
+
 
