@@ -11,8 +11,8 @@ spec:
   source:
     path: workload/config/oshift1/
     repoURL: https://github.com/networkoperator/demo-cluster-manifests
-    targetRevision: sumit-test-1 
-	directory:
+    targetRevision: sumit-test-1
+    directory:
       exclude: '*.tar.gz'
   syncPolicy:
     automated:
