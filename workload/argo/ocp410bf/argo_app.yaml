@@ -12,6 +12,8 @@ spec:
     path: workload/config/ocp410bf/
     repoURL: https://github.com/networkoperator/demo-cluster-manifests
     targetRevision: sumit-test-1 
+	directory:
+      exclude: '*.tar.gz'
   syncPolicy:
     automated:
       prune: true
