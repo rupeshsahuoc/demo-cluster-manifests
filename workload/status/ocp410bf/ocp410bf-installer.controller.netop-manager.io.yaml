@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-aci-cni, ns:null, status:{"clusterOverview":{"nodes":5,"ns":65,"pods":240,"svc":83},"observedGeneration":9,"operatorStatus":"Running"},
-    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjUsIm5zIjo2NSwicG9kcyI6MjQwLCJzdmMiOjgzfSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjo5LCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ==
+  data: name:installer-aci-cni, ns:null, status:{"clusterOverview":{"nodes":5,"ns":65,"pods":238,"svc":83},"observedGeneration":9,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjUsIm5zIjo2NSwicG9kcyI6MjM4LCJzdmMiOjgzfSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjo5LCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ==
 kind: ConfigMap
 metadata:
   creationTimestamp: null
